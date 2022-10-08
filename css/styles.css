@@ -192,7 +192,7 @@ ul {
   text-align: center;
 }
 
-.hero-title {
+.hero__title {
   max-width: 696px;
   margin: 0 auto 30px;
 
@@ -472,15 +472,19 @@ textarea {
   display: flex;
 }
 
-.feature-list .item {
+.feature-list__item {
   width: 270px;
 }
 
-.feature-list .item + .item {
+.feature-list__item {
   margin-left: 30px;
 }
 
-.feature-list .thumb {
+.feature-list__item:first-child {
+  margin-left: 0;
+}
+
+.feature-list__thumb {
   display: flex;
   width: 270px;
   height: 120px;
@@ -492,7 +496,7 @@ textarea {
   border-radius: 4px;
 }
 
-.feature-title {
+.feature-list__title {
   margin-bottom: 10px;
 
   color: var(--title-text-color);
@@ -505,7 +509,7 @@ textarea {
 
 /* Чим ми займаємось */
 
-.section.work {
+.section-work {
   padding-top: 0;
 }
 
@@ -513,16 +517,20 @@ textarea {
   display: flex;
 }
 
-.work-list .pic {
+.work-list__pic {
   height: 294px;
   position: relative;
 }
 
-.work-list .pic + .pic {
+.work-list__pic {
   margin-left: 30px;
 }
 
-.superimposed-text {
+.work-list__pic:first-child {
+  margin-left: 0;
+}
+
+.work-list__text {
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -538,7 +546,7 @@ textarea {
 
 /* Наша команда */
 
-.team {
+.section-team {
   background-color: var(--team-bg-color);
 }
 
@@ -546,7 +554,7 @@ textarea {
   display: flex;
 }
 
-.team .card {
+.team-list__card {
   background-color: var(--primary-bg-color);
   text-align: center;
   
@@ -554,20 +562,24 @@ textarea {
   border-radius: 0px 0px 4px 4px;
 }
 
-.team .card + .card {
+.team-list__card {
   margin-left: 30px;
 }
 
-.card .name {
-  padding: 30px 32px;
+.team-list__card:first-child {
+  margin-left: 0;
 }
 
-.card .photo {
+.team-list__photo {
   display: block;
   max-width: 100%;
 }
 
-.team-list .title {
+.team-list__name-thumb {
+  padding: 30px 32px;
+}
+
+.team-list__name {
   margin-bottom: 10px;
 
   color: var(--title-text-color);
@@ -577,7 +589,7 @@ textarea {
   letter-spacing: 0.03em;
 }
 
-.team-list .text {
+.team-list__text {
   color: var(--primary-text-color);
   font-size: 16px;
   line-height: 1.19;
@@ -593,7 +605,7 @@ textarea {
   color: var(--third-bg-color);
 }
 
-.team-social .link-social {
+.team-social__link {
   display: block;
   padding: 12px;
   height: 44px;
@@ -604,20 +616,20 @@ textarea {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-social .link-social:hover,
-.team-social .link-social:focus {
+.team-social__link:hover,
+.team-social__link:focus {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 }
 
-/* client-list */
+/* Постійні клієнти */
 
 .client-list {
   display: flex;
   gap: 30px;
 }
 
-.client-list .link {
+.client-list__link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -630,21 +642,21 @@ textarea {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client-list .link:hover,
-.client-list .link:focus {
+.client-list__link:hover,
+.client-list__link:focus {
   fill: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
 
 /* FOOTER */
-
+/* Адреса */
 .page-footer {
   padding: 60px 0;
 
   background-color: var(--secondary-bg-color);
 }
 
-.page-footer>.container {
+.page-footer__container {
   display: flex;
   align-items: baseline;
 }
@@ -657,11 +669,15 @@ textarea {
   margin-top: 20px;
 }
 
-.address-box .item + .item {
+.address-box__item {
   margin-top: 9px;
 }
 
-.address-box .link {
+.address-box__item:first-child {
+  margin-top: 0;
+}
+
+.address-box__link {
   color: var(--address-text-color);
   font-style: normal;
   font-size: 14px;
@@ -672,7 +688,7 @@ textarea {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.address-box .link.map {
+.address-box__link-map {
   color: var(--primary-white-color);
   font-style: normal;
   font-size: 14px;
@@ -682,17 +698,19 @@ textarea {
 
 }
 
-.address-box .link:hover,
-.address-box .link:focus {
+.address-box__link:hover,
+.address-box__link:focus {
   color: var(--accent-color);
 }
+
+/* Соц. мережі */
 
 .footer-media {
   margin-left: 70px;
 }
 
-.join-in,
-.sign-up {
+.footer-media__text,
+.mail-input__text {
   display: block;
   margin-bottom: 20px;
   font-weight: 700;
@@ -711,7 +729,7 @@ textarea {
   color: var(--primary-white-color);
 }
 
-.footer-social .link-social {
+.footer-social__link {
   display: block;
   padding: 12px;
   height: 44px;
@@ -723,20 +741,22 @@ textarea {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-social .link-social:hover,
-.footer-social .link-social:focus {
+.footer-social__link:hover,
+.footer-social__link:focus {
   background-color: var(--accent-color);
 }
 
-.mail-form {
-  display: flex;
-}
+/* Форма мейлу */
 
 .mail-input {
   margin-left: 93px;
 }
 
-.mail-form input {
+.mail-input__form {
+  display: flex;
+}
+
+.mail-input__field {
   min-width: 358px;
   padding: 15px 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -747,44 +767,25 @@ textarea {
   font-size: 16px;
 }
 
-.mail-form input::placeholder {
+.mail-input__field::placeholder {
   font-size: 16px;
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.6);
 }
 
-.mail-form input:focus {
+.mail-input__field:focus {
   outline: 1px solid var(--primary-bg-color);
 }
 
-.sign-up-button {
+.mail-input__button {
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 200px;
   margin-left: 12px;
-  border-radius: 4px;
-  border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sign-up-button:hover,
-.sign-up-button:focus {
-  background-color: var(--button-active-bg-color);
-}
-
-.logo-sign {
+.button__logo {
   margin-left: 10px;
   fill: var(--primary-white-color);
 }
